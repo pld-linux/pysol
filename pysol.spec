@@ -2,7 +2,7 @@ Summary:	PySol - a solitaire game collection
 Summary(pl):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.82
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://www.oberhumer.com/opensource/%{name}/download/%{name}-%{version}.tar.bz2
@@ -216,14 +216,14 @@ mv %{name}-%{version}/src .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Card,%{_bindir},%{_datadir}} \
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_bindir},%{_datadir}} \
 	$RPM_BUILD_ROOT{%{_mandir}/man6,%{_pixmapsdir},%{py_sitedir}/pysol}
 
 sed s\|@pkgdatadir@\|%{_datadir}/pysol\| pysol > $RPM_BUILD_ROOT%{_bindir}/pysol
 mv data $RPM_BUILD_ROOT%{_datadir}/pysol
 
 install pysol.6 $RPM_BUILD_ROOT%{_mandir}/man6/pysol.6
-install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Games/Card
+install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE5} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 cp -R src/* $RPM_BUILD_ROOT%{py_sitedir}/pysol
@@ -261,7 +261,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pysol/cardset-vienna-2k
 %{_mandir}/man6/*
 %{_pixmapsdir}/*
-%{_applnkdir}/Games/Card/*
+%{_desktopdir}/*
 
 %files cardsets-classic_look
 %defattr(644,root,root,755)
