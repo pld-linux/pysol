@@ -6,9 +6,13 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://pysol2.sourceforge.net/download/%{name}-%{version}.tar.bz2
+# Source0-md5:	3a4148f8cd4afd907f7f6798e4ab976f
 Source1:	http://pysol2.sourceforge.net/download/%{name}-cardsets-4.40.tar.bz2
+# Source1-md5:	cdf3749865b2f3b9d60950a9fb87185a
 Source2:	http://pysol2.sourceforge.net/download/%{name}-music-4.40.tar.bz2
+# Source2-md5:	08717045ef86825a1e59d5f66c3bf720
 Source3:	http://pysol2.sourceforge.net/download/%{name}-%{version}-src.tar.bz2
+# Source3-md5:	d7a0f5981d575da13fa444c505c75a96
 Source4:	%{name}.desktop
 Source5:	%{name}.png
 URL:		http://www.oberhumer.com/pysol/
