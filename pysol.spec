@@ -2,7 +2,7 @@ Summary:	PySol - a solitaire game collection
 Summary(pl):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.81
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://pysol2.sourceforge.net/download/%{name}-%{version}.tar.bz2
@@ -15,10 +15,13 @@ Source3:	http://pysol2.sourceforge.net/download/%{name}-%{version}-src.tar.bz2
 # Source3-md5:	d7a0f5981d575da13fa444c505c75a96
 Source4:	%{name}.desktop
 Source5:	%{name}.png
+Patch0:		%{name}-python23.patch
 URL:		http://www.oberhumer.com/pysol/
-Requires:	python
+BuildRequires:	pysol-sound-server >= 3.00
+BuildRequires:	python >= 2.3
+Requires:	pysol-sound-server >= 3.00
+Requires:	python >= 2.3
 Requires:	tkinter
-Conflicts:	pysol-sound-server < 3.00
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -198,22 +201,24 @@ Background music for pysol.
 Muzyka dla pysol-a.
 
 %prep
-%setup -q -a 1 -a 2
+%setup -q -a 1 -a 2 -a 3
 rm -rf data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port \
 	data/cardset-hexadeck data/cardset-kintengu data/cardset-tuxedo \
 	data/cardset-vienna-2k
-rm -rf data/pysol_{15,16,20,21}.pyc
+rm -f data/pysol_{15,16,20,21,22}.pyc
 for i in pysol-cardsets-4.40/data/*; do
 	mv $i data/;
 done
 for i in pysol-music-4.40/data/music/*; do
 	mv $i data/music/;
 done
+mv %{name}-%{version}/src .
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Card,%{_bindir},%{_datadir}} \
-	$RPM_BUILD_ROOT{%{_mandir}/man6,%{_pixmapsdir}}
+	$RPM_BUILD_ROOT{%{_mandir}/man6,%{_pixmapsdir},%{py_sitedir}/pysol}
 
 sed s\|@pkgdatadir@\|%{_datadir}/pysol\| pysol > $RPM_BUILD_ROOT%{_bindir}/pysol
 mv data $RPM_BUILD_ROOT%{_datadir}/pysol
@@ -222,6 +227,11 @@ install pysol.6 $RPM_BUILD_ROOT%{_mandir}/man6/pysol.6
 install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Games/Card
 install %{SOURCE5} $RPM_BUILD_ROOT%{_pixmapsdir}
 
+cp -R src/* $RPM_BUILD_ROOT%{py_sitedir}/pysol
+%py_comp $RPM_BUILD_ROOT%{py_sitedir}/pysol
+%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}/pysol
+ln -sf %{py_sitedir}/pysol/pysol.pyc $RPM_BUILD_ROOT%{_datadir}/pysol/pysol_23.pyc
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -229,6 +239,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/*
+%dir %{py_sitedir}/pysol
+%{py_sitedir}/pysol/*.py[co]
+%dir %{py_sitedir}/pysol/games
+%{py_sitedir}/pysol/games/*.py[co]
+%dir %{py_sitedir}/pysol/games/contrib
+%{py_sitedir}/pysol/games/contrib/*.py[co]
+%dir %{py_sitedir}/pysol/games/special
+%{py_sitedir}/pysol/games/special/*.py[co]
+%dir %{py_sitedir}/pysol/tk
+%{py_sitedir}/pysol/tk/*.py[co]
 %dir %{_datadir}/pysol
 %{_datadir}/pysol/html
 %{_datadir}/pysol/images
