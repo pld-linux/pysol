@@ -17,8 +17,6 @@ Requires:	python
 Conflicts:	pysol-sound-server < 3.00
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 - currently supports more than 200 distinct solitaire games,
