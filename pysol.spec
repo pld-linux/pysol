@@ -70,7 +70,7 @@ Requires:	%{name}
 %description cardsets
 Additional cardsets for pysol.
 
-%description -l pl cardsets
+%description cardsets -l pl
 Dodatkowe zestawy kart dla pysol-a.
 
 %package sounds
@@ -78,12 +78,12 @@ Summary:	Sounds for pysol
 Summary(pl):	D¼wiêki dla pysol-a
 Group:		X11/Applications/Games
 Requires:	%{name}
-Requires:	%{name}-sound-server 
+Requires:	%{name}-sound-server
 
 %description sounds
 Sounds for pysol.
 
-%description -l pl sounds
+%description sounds -l pl
 D¼wiêki dla pysol-a.
 
 %package music
@@ -96,11 +96,11 @@ Requires:	%{name}-sound-server
 %description music
 Background music for pysol.
 
-%description -l pl music
+%description music -l pl
 Muzyka dla pysol-a.
 
 %prep
-%setup -q -a 1 -a 2 
+%setup -q -a 1 -a 2
 rm -rf data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port \
 	data/cardset-hexadeck data/cardset-kintengu data/cardset-tuxedo \
 	data/cardset-vienna-2k
