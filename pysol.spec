@@ -244,8 +244,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/pysol/cardset-2000
 %{_datadir}/pysol/cardset-briscola
-%{_datadir}/pysol/cardset-dashavatara*
-%{_datadir}/pysol/cardset-mughal*
 %{_datadir}/pysol/cardset-xskat*
 
 %files cardsets-collectors-1-D
