@@ -63,7 +63,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 - d¼wiêki i muzyka w tle,
 - zintegrowana przegl±darka pomocy w HTML-u,
 - mnóstwo dokumentacji,
-- napisane w 100%% w Python-ie.
+- napisane w 100%% w Pythonie.
 
 %package cardsets-classic_look
 Summary:	Additional cardsets for pysol
