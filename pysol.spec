@@ -5,11 +5,6 @@ Version:	4.80
 Release:	4
 License:	GPL
 Group:		X11/Applications/Games
-Group(de):	X11/Applikationen/Spiele
-Group(es):	X11/Aplicaciones/Juegos
-Group(fr):	X11/Applications/Jeux
-Group(pl):	X11/Aplikacje/Gry
-Group(pt):	X11/Aplicações/Jogos
 Source0:	http://www.oberhumer.com/opensource/pysol/download/%{name}-%{version}.tar.bz2
 Source1:	http://www.oberhumer.com/opensource/pysol/download/%{name}-cardsets-4.40.tar.bz2
 Source2:	http://www.oberhumer.com/opensource/pysol/download/%{name}-music-4.40.tar.bz2
@@ -70,11 +65,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Summary:	Additional cardsets for pysol
 Summary(pl):	Dodatkowe zestawy kart dla pysol-a
 Group:		X11/Applications/Games
-Group(de):	X11/Applikationen/Spiele
-Group(es):	X11/Aplicaciones/Juegos
-Group(fr):	X11/Applications/Jeux
-Group(pl):	X11/Aplikacje/Gry
-Group(pt):	X11/Aplicações/Jogos
 Requires:	%{name}
 
 %description cardsets
@@ -87,11 +77,6 @@ Dodatkowe zestawy kart dla pysol-a.
 Summary:	Sounds for pysol
 Summary(pl):	D¼wiêki dla pysol-a
 Group:		X11/Applications/Games
-Group(de):	X11/Applikationen/Spiele
-Group(es):	X11/Aplicaciones/Juegos
-Group(fr):	X11/Applications/Jeux
-Group(pl):	X11/Aplikacje/Gry
-Group(pt):	X11/Aplicações/Jogos
 Requires:	%{name}
 Requires:	%{name}-sound-server 
 
@@ -105,11 +90,6 @@ D¼wiêki dla pysol-a.
 Summary:	Background music for pysol
 Summary(pl):	Muzyka dla pysol-a
 Group:		X11/Applications/Games
-Group(de):	X11/Applikationen/Spiele
-Group(es):	X11/Aplicaciones/Juegos
-Group(fr):	X11/Applications/Jeux
-Group(pl):	X11/Aplikacje/Gry
-Group(pt):	X11/Aplicações/Jogos
 Requires:	%{name}
 Requires:	%{name}-sound-server
 
