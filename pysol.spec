@@ -13,6 +13,7 @@ Group(pt):	X11/Aplicações/Jogos
 Source0:	http://www.oberhumer.com/opensource/pysol/download/%{name}-%{version}.tar.bz2
 Source1:	http://www.oberhumer.com/opensource/pysol/download/%{name}-cardsets-4.40.tar.bz2
 Source2:	http://www.oberhumer.com/opensource/pysol/download/%{name}-music-4.40.tar.bz2
+Source3:	http://www.oberhumer.com/opensource/pysol/download/%{name}-%{version}-src.tar.bz2
 Source4:	%{name}.desktop
 Source5:	%{name}.png
 URL:		http://www.oberhumer.com/pysol
