@@ -6,4 +6,5 @@ Icon=pysol.png
 Exec=pysol
 Terminal=0
 Type=Application
+Encoding=UTF-8
 # vi: encoding=utf-8
