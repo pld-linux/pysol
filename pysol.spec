@@ -1,18 +1,18 @@
 Summary:	PySol - a solitaire game collection
 Summary(pl):	PySol - kolekcja pasjansów
 Name:		pysol
-Version:	4.81
-Release:	3
+Version:	4.82
+Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://pysol2.sourceforge.net/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	3a4148f8cd4afd907f7f6798e4ab976f
-Source1:	http://pysol2.sourceforge.net/download/%{name}-cardsets-4.40.tar.bz2
+Source0:	http://www.oberhumer.com/opensource/%{name}/download/%{name}-%{version}.tar.bz2
+# Source0-md5:	31a3ed96c6feb54717c6bce9ddd82b24
+Source1:	http://www.oberhumer.com/opensource/%{name}/download/%{name}-cardsets-4.40.tar.bz2
 # Source1-md5:	cdf3749865b2f3b9d60950a9fb87185a
-Source2:	http://pysol2.sourceforge.net/download/%{name}-music-4.40.tar.bz2
+Source2:	http://www.oberhumer.com/opensource/%{name}/download/%{name}-music-4.40.tar.bz2
 # Source2-md5:	08717045ef86825a1e59d5f66c3bf720
-Source3:	http://pysol2.sourceforge.net/download/%{name}-%{version}-src.tar.bz2
-# Source3-md5:	d7a0f5981d575da13fa444c505c75a96
+Source3:	http://www.oberhumer.com/opensource/%{name}/download/%{name}-%{version}-src.tar.bz2
+# Source3-md5:	be0fd45c016fe2dcacb03fb29871aff4
 Source4:	%{name}.desktop
 Source5:	%{name}.png
 Patch0:		%{name}-python23.patch
@@ -20,7 +20,7 @@ URL:		http://www.oberhumer.com/pysol/
 BuildRequires:	python >= 2.3
 Requires:	pysol-sound-server >= 3.00
 Requires:	python >= 2.3
-Requires:	tkinter
+Requires:	python-tkinter
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -203,7 +203,7 @@ Muzyka dla pysol-a.
 %setup -q -a 1 -a 2 -a 3
 rm -rf data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port \
 	data/cardset-hexadeck data/cardset-kintengu data/cardset-tuxedo \
-	data/cardset-vienna-2k
+	data/cardset-vienna-2k data/cardset-oxymoron
 rm -f data/pysol_{15,16,20,21,22}.pyc
 for i in pysol-cardsets-4.40/data/*; do
 	mv $i data/;
@@ -255,7 +255,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pysol/tiles
 %{_datadir}/pysol/toolbar
 %{_datadir}/pysol/pysol*
-%{_datadir}/pysol/cardset-standard
 %{_datadir}/pysol/cardset-hard-a-port
 %{_datadir}/pysol/cardset-hexadeck
 %{_datadir}/pysol/cardset-kintengu*
