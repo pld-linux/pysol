@@ -17,7 +17,6 @@ Source4:	%{name}.desktop
 Source5:	%{name}.png
 Patch0:		%{name}-python23.patch
 URL:		http://www.oberhumer.com/pysol/
-BuildRequires:	pysol-sound-server >= 3.00
 BuildRequires:	python >= 2.3
 Requires:	pysol-sound-server >= 3.00
 Requires:	python >= 2.3
