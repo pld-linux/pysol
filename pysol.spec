@@ -5,22 +5,22 @@ Version:	4.82
 Release:	2
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://www.oberhumer.com/opensource/%{name}/download/%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	31a3ed96c6feb54717c6bce9ddd82b24
-Source1:	http://www.oberhumer.com/opensource/%{name}/download/%{name}-cardsets-4.40.tar.bz2
+Source1:	%{name}-cardsets-4.40.tar.bz2
 # Source1-md5:	cdf3749865b2f3b9d60950a9fb87185a
-Source2:	http://www.oberhumer.com/opensource/%{name}/download/%{name}-music-4.40.tar.bz2
+Source2:	%{name}-music-4.40.tar.bz2
 # Source2-md5:	08717045ef86825a1e59d5f66c3bf720
-Source3:	http://www.oberhumer.com/opensource/%{name}/download/%{name}-%{version}-src.tar.bz2
+Source3:	http://www.pysol.org/download/pysol/%{name}-%{version}-src.tar.bz2
 # Source3-md5:	be0fd45c016fe2dcacb03fb29871aff4
 Source4:	%{name}.desktop
 Source5:	%{name}.png
 Patch0:		%{name}-python23.patch
-URL:		http://www.oberhumer.com/pysol/
-BuildRequires:	python >= 2.3
+URL:		http://www.pysol.org/
+BuildRequires:	python >= 1:2.3
 Requires:	pysol-sound-server >= 3.00
-Requires:	python >= 2.3
-Requires:	python-tkinter
+Requires:	python >= 1:2.3
+%pyrequires_eq	python-tkinter
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -67,43 +67,43 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %package cardsets-classic_look
 Summary:	Additional cardsets for pysol
-Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Summary(pl):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
-Requires:	%{name}
+Requires:	%{name} = %{version}-%{release}
 
 %description cardsets-classic_look
 Additional cardsets (Classic look) for pysol.
 
 %description cardsets-classic_look -l pl
-Dodatkowe zestawy kart (Klasyczny wygl±d) dla pysol-a.
+Dodatkowe zestawy kart (Klasyczny wygl±d) dla pysola.
 
 %package cardsets-collectors-1-D
 Summary:	Additional cardsets for pysol
-Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Summary(pl):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
-Requires:	%{name}
+Requires:	%{name} = %{version}-%{release}
 
 %description cardsets-collectors-1-D
 Additional cardsets (Collectors 1-D) for pysol.
 
 %description cardsets-collectors-1-D -l pl
-Dodatkowe zestawy kart (Kolekcjonerskie 1-D) dla pysol-a.
+Dodatkowe zestawy kart (Kolekcjonerskie 1-D) dla pysola.
 
 %package cardsets-collectors-F-J
 Summary:	Additional cardsets for pysol
-Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Summary(pl):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
-Requires:	%{name}
+Requires:	%{name} = %{version}-%{release}
 
 %description cardsets-collectors-F-J
 Additional cardsets (Collectors F-J) for pysol.
 
 %description cardsets-collectors-F-J -l pl
-Dodatkowe zestawy kart (Kolekcjonerskie F-J) dla pysol-a.
+Dodatkowe zestawy kart (Kolekcjonerskie F-J) dla pysola.
 
 %package cardsets-collectors-L-N
 Summary:	Additional cardsets for pysol
-Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Summary(pl):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -111,11 +111,11 @@ Requires:	%{name}
 Additional cardsets (Collectors L-N) for pysol.
 
 %description cardsets-collectors-L-N -l pl
-Dodatkowe zestawy kart (Kolekcjonerskie L-N) dla pysol-a.
+Dodatkowe zestawy kart (Kolekcjonerskie L-N) dla pysola.
 
 %package cardsets-collectors-P-W
 Summary:	Additional cardsets for pysol
-Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Summary(pl):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -123,11 +123,11 @@ Requires:	%{name}
 Additional cardsets (Collectors P-W) for pysol.
 
 %description cardsets-collectors-P-W -l pl
-Dodatkowe zestawy kart (Kolekcjonerskie P-W) dla pysol-a.
+Dodatkowe zestawy kart (Kolekcjonerskie P-W) dla pysola.
 
 %package cardsets-fantasy
 Summary:	Additional cardsets for pysol
-Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Summary(pl):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -135,11 +135,11 @@ Requires:	%{name}
 Additional cardsets (Fantasy) for pysol.
 
 %description cardsets-fantasy -l pl
-Dodatkowe zestawy kart (Fantastyczne) dla pysol-a.
+Dodatkowe zestawy kart (Fantastyczne) dla pysola.
 
 %package cardsets-os
 Summary:	Additional cardsets for pysol
-Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Summary(pl):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -147,11 +147,11 @@ Requires:	%{name}
 Additional cardsets (Operating Systems) for pysol.
 
 %description cardsets-os -l pl
-Dodatkowe zestawy kart (Systemy operacyjne) dla pysol-a.
+Dodatkowe zestawy kart (Systemy operacyjne) dla pysola.
 
 %package cardsets-round
 Summary:	Additional cardsets for pysol
-Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Summary(pl):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -159,11 +159,11 @@ Requires:	%{name}
 Additional cardsets (Round cardsets) for pysol.
 
 %description cardsets-round -l pl
-Dodatkowe zestawy kart (Kr±g³e karty) dla pysol-a.
+Dodatkowe zestawy kart (Kr±g³e karty) dla pysola.
 
 %package cardsets-uncategorized
 Summary:	Additional cardsets for pysol
-Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Summary(pl):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -171,11 +171,11 @@ Requires:	%{name}
 Additional cardsets (Uncategorized) for pysol.
 
 %description cardsets-uncategorized -l pl
-Dodatkowe zestawy kart (Nieskatalogowane) dla pysol-a.
+Dodatkowe zestawy kart (Nieskatalogowane) dla pysola.
 
 %package sounds
 Summary:	Sounds for pysol
-Summary(pl):	D¼wiêki dla pysol-a
+Summary(pl):	D¼wiêki dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 Requires:	%{name}-sound-server >= 3.00
@@ -184,11 +184,11 @@ Requires:	%{name}-sound-server >= 3.00
 Sounds for pysol.
 
 %description sounds -l pl
-D¼wiêki dla pysol-a.
+D¼wiêki dla pysola.
 
 %package music
 Summary:	Background music for pysol
-Summary(pl):	Muzyka dla pysol-a
+Summary(pl):	Muzyka dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 Requires:	%{name}-sound-server >= 3.00
@@ -197,7 +197,7 @@ Requires:	%{name}-sound-server >= 3.00
 Background music for pysol.
 
 %description music -l pl
-Muzyka dla pysol-a.
+Muzyka dla pysola.
 
 %prep
 %setup -q -a 1 -a 2 -a 3
