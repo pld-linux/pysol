@@ -1,0 +1,24 @@
+diff -urN aaa/pysol-4.81/src/app.py pysol-4.81/src/app.py
+--- aaa/pysol-4.81/src/app.py	2002-06-24 18:05:15.000000000 +0200
++++ pysol-4.81/src/app.py	2003-07-30 23:23:24.000000000 +0200
+@@ -1063,7 +1063,7 @@
+         names = map(os.path.normcase, names)
+         names.sort()
+         for name in names:
+-            m = re.search(r"^(.+)\.py$", name)
++            m = re.search(r"^(.+)\.pyc$", name)
+             n = os.path.join(dir, name)
+             if m and os.path.isfile(n):
+                 p = sys.path[:]
+diff -urN aaa/pysol-4.81/src/pysol.py pysol-4.81/src/pysol.py
+--- aaa/pysol-4.81/src/pysol.py	2002-06-24 18:05:15.000000000 +0200
++++ pysol-4.81/src/pysol.py	2003-07-30 23:23:20.000000000 +0200
+@@ -64,7 +64,7 @@
+     names = map(os.path.normcase, names)
+     names.sort()
+     for name in names:
+-        m = re.search(r"^(.+)\.py$", name)
++        m = re.search(r"^(.+)\.pyc$", name)
+         if m:
+             n = m.group(1)
+             if not g.has_key(n):
