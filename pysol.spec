@@ -1,8 +1,8 @@
 Summary:	PySol - a solitaire game collection
 Summary(pl):	PySol - kolekcja pasjansów
 Name:		pysol
-Version:	4.80
-Release:	6
+Version:	4.81
+Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://www.oberhumer.com/opensource/pysol/download/%{name}-%{version}.tar.bz2
@@ -11,9 +11,10 @@ Source2:	http://www.oberhumer.com/opensource/pysol/download/%{name}-music-4.40.t
 Source3:	http://www.oberhumer.com/opensource/pysol/download/%{name}-%{version}-src.tar.bz2
 Source4:	%{name}.desktop
 Source5:	%{name}.png
-URL:		http://www.oberhumer.com/pysol
+URL:		http://www.oberhumer.com/pysol/
 Requires:	tkinter
 Requires:	python
+Conflicts:	pysol-sound-server < 3.00
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -174,7 +175,7 @@ Summary:	Sounds for pysol
 Summary(pl):	D¼wiêki dla pysol-a
 Group:		X11/Applications/Games
 Requires:	%{name}
-Requires:	%{name}-sound-server
+Requires:	%{name}-sound-server >= 3.00
 
 %description sounds
 Sounds for pysol.
@@ -187,7 +188,7 @@ Summary:	Background music for pysol
 Summary(pl):	Muzyka dla pysol-a
 Group:		X11/Applications/Games
 Requires:	%{name}
-Requires:	%{name}-sound-server
+Requires:	%{name}-sound-server >= 3.00
 
 %description music
 Background music for pysol.
@@ -280,6 +281,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pysol/cardset-tensho
 %{_datadir}/pysol/cardset-transformation
 %{_datadir}/pysol/cardset-traugott*
+%{_datadir}/pysol/cardset-ukiyoe-*
 %{_datadir}/pysol/cardset-vienna-2k-small
 %{_datadir}/pysol/cardset-vienna-tarock
 %{_datadir}/pysol/cardset-wilhelmtell
@@ -306,8 +308,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/pysol/cardset-aisleriot
 %{_datadir}/pysol/cardset-colossus
+%{_datadir}/pysol/cardset-gdkcard-bonded
 %{_datadir}/pysol/cardset-gpl
 %{_datadir}/pysol/cardset-jacoby
+%{_datadir}/pysol/cardset-kabale
 %{_datadir}/pysol/cardset-naylor
 %{_datadir}/pysol/cardset-oxymoron*
 %{_datadir}/pysol/cardset-rangoon*
