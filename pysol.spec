@@ -2,7 +2,7 @@ Summary:	PySol - a solitaire game collection
 Summary(pl):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.80
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://www.oberhumer.com/opensource/pysol/download/%{name}-%{version}.tar.bz2
@@ -61,17 +61,113 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 - mnóstwo dokumentacji,
 - napisane w 100%% w Python-ie.
 
-%package cardsets
+%package cardsets-classic_look
 Summary:	Additional cardsets for pysol
 Summary(pl):	Dodatkowe zestawy kart dla pysol-a
 Group:		X11/Applications/Games
 Requires:	%{name}
 
-%description cardsets
-Additional cardsets for pysol.
+%description cardsets-classic_look
+Additional cardsets (Classic look) for pysol.
 
-%description cardsets -l pl
-Dodatkowe zestawy kart dla pysol-a.
+%description cardsets-classic_look -l pl
+Dodatkowe zestawy kart (Klasyczny wygl±d) dla pysol-a.
+
+%package cardsets-collectors-1-D
+Summary:	Additional cardsets for pysol
+Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Group:		X11/Applications/Games
+Requires:	%{name}
+
+%description cardsets-collectors-1-D
+Additional cardsets (Collectors 1-D) for pysol.
+
+%description cardsets-collectors-1-D -l pl
+Dodatkowe zestawy kart (Kolekcjonerskie 1-D) dla pysol-a.
+
+%package cardsets-collectors-F-J
+Summary:	Additional cardsets for pysol
+Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Group:		X11/Applications/Games
+Requires:	%{name}
+
+%description cardsets-collectors-F-J
+Additional cardsets (Collectors F-J) for pysol.
+
+%description cardsets-collectors-F-J -l pl
+Dodatkowe zestawy kart (Kolekcjonerskie F-J) dla pysol-a.
+
+%package cardsets-collectors-L-N
+Summary:	Additional cardsets for pysol
+Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Group:		X11/Applications/Games
+Requires:	%{name}
+
+%description cardsets-collectors-L-N
+Additional cardsets (Collectors L-N) for pysol.
+
+%description cardsets-collectors-L-N -l pl
+Dodatkowe zestawy kart (Kolekcjonerskie L-N) dla pysol-a.
+
+%package cardsets-collectors-P-W
+Summary:	Additional cardsets for pysol
+Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Group:		X11/Applications/Games
+Requires:	%{name}
+
+%description cardsets-collectors-P-W
+Additional cardsets (Collectors P-W) for pysol.
+
+%description cardsets-collectors-P-W -l pl
+Dodatkowe zestawy kart (Kolekcjonerskie P-W) dla pysol-a.
+
+%package cardsets-fantasy
+Summary:	Additional cardsets for pysol
+Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Group:		X11/Applications/Games
+Requires:	%{name}
+
+%description cardsets-fantasy
+Additional cardsets (Fantasy) for pysol.
+
+%description cardsets-fantasy -l pl
+Dodatkowe zestawy kart (Fantastyczne) dla pysol-a.
+
+%package cardsets-os
+Summary:	Additional cardsets for pysol
+Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Group:		X11/Applications/Games
+Requires:	%{name}
+
+%description cardsets-os
+Additional cardsets (Operating Systems) for pysol.
+
+%description cardsets-os -l pl
+Dodatkowe zestawy kart (Systemy operacyjne) dla pysol-a.
+
+%package cardsets-round
+Summary:	Additional cardsets for pysol
+Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Group:		X11/Applications/Games
+Requires:	%{name}
+
+%description cardsets-round
+Additional cardsets (Round cardsets) for pysol.
+
+%description cardsets-round -l pl
+Dodatkowe zestawy kart (Kr±g³e karty) dla pysol-a.
+
+%package cardsets-uncategorized
+Summary:	Additional cardsets for pysol
+Summary(pl):	Dodatkowe zestawy kart dla pysol-a
+Group:		X11/Applications/Games
+Requires:	%{name}
+
+%description cardsets-uncategorized
+Additional cardsets (Uncategorized) for pysol.
+
+%description cardsets-uncategorized -l pl
+Dodatkowe zestawy kart (Nieskatalogowane) dla pysol-a.
 
 %package sounds
 Summary:	Sounds for pysol
@@ -117,8 +213,6 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Card,%{_bindir},%{_datadir},%{_ma
 sed s\|@pkgdatadir@\|%{_datadir}/pysol\| pysol > $RPM_BUILD_ROOT%{_bindir}/pysol
 mv data $RPM_BUILD_ROOT%{_datadir}/pysol
 
-gzip -9nf README
-
 install pysol.6 $RPM_BUILD_ROOT%{_mandir}/man6/pysol.6
 install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Games/Card
 install %{SOURCE5} $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -128,7 +222,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/pysol
 %{_datadir}/pysol/html
@@ -140,22 +234,88 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pysol/cardset-standard
 %{_datadir}/pysol/cardset-hard-a-port
 %{_datadir}/pysol/cardset-hexadeck
-%{_datadir}/pysol/cardset-kintengu
+%{_datadir}/pysol/cardset-kintengu*
 %{_datadir}/pysol/cardset-vienna-2k
 %{_mandir}/man6/*
 %{_pixmapsdir}/*
 %{_applnkdir}/Games/Card/*
 
-%files cardsets
+%files cardsets-classic_look
 %defattr(644,root,root,755)
-%{_datadir}/pysol/cardset-[12abcdfgjlmnoprtuwx]*
-%{_datadir}/pysol/cardset-ham*
-%{_datadir}/pysol/cardset-heg*
-%{_datadir}/pysol/cardset-h[ou]*
-%{_datadir}/pysol/cardset-kintengu-s*
-%{_datadir}/pysol/cardset-vienna-2k-s*
-%{_datadir}/pysol/cardset-vienna-t*
-%{_datadir}/pysol/cardset-sp*
+%{_datadir}/pysol/cardset-2000
+%{_datadir}/pysol/cardset-briscola
+%{_datadir}/pysol/cardset-dashavatara*
+%{_datadir}/pysol/cardset-mughal*
+%{_datadir}/pysol/cardset-xskat*
+
+%files cardsets-collectors-1-D
+%defattr(644,root,root,755)
+%{_datadir}/pysol/cardset-1*
+%{_datadir}/pysol/cardset-culemann*
+%{_datadir}/pysol/cardset-denizens
+%{_datadir}/pysol/cardset-dondorf*
+
+%files cardsets-collectors-F-J
+%defattr(644,root,root,755)
+%{_datadir}/pysol/cardset-fantasy
+%{_datadir}/pysol/cardset-gortz*
+%{_datadir}/pysol/cardset-hamburg*
+%{_datadir}/pysol/cardset-hegewald*
+%{_datadir}/pysol/cardset-houbigant
+%{_datadir}/pysol/cardset-hungarian*
+%{_datadir}/pysol/cardset-joan-darc
+
+%files cardsets-collectors-L-N
+%defattr(644,root,root,755)
+%{_datadir}/pysol/cardset-revolution*
+%{_datadir}/pysol/cardset-liege
+%{_datadir}/pysol/cardset-little*
+%{_datadir}/pysol/cardset-maritimes
+%{_datadir}/pysol/cardset-melange
+%{_datadir}/pysol/cardset-migeon*
+%{_datadir}/pysol/cardset-nickel*
+
+%files cardsets-collectors-P-W
+%defattr(644,root,root,755)
+%{_datadir}/pysol/cardset-prince*
+%{_datadir}/pysol/cardset-spin*
+%{_datadir}/pysol/cardset-tensho
+%{_datadir}/pysol/cardset-transformation
+%{_datadir}/pysol/cardset-traugott*
+%{_datadir}/pysol/cardset-vienna-2k-small
+%{_datadir}/pysol/cardset-vienna-tarock
+%{_datadir}/pysol/cardset-wilhelmtell
+
+%files cardsets-fantasy
+%defattr(644,root,root,755)
+%{_datadir}/pysol/cardset-rivers*
+
+%files cardsets-os
+%defattr(644,root,root,755)
+%{_datadir}/pysol/cardset-penguins
+%{_datadir}/pysol/cardset-spaced
+%{_datadir}/pysol/cardset-tuxedo
+%{_datadir}/pysol/cardset-xpat2
+
+%files cardsets-round
+%defattr(644,root,root,755)
+%{_datadir}/pysol/cardset-mughal*
+%{_datadir}/pysol/cardset-dashavatara*
+%{_datadir}/pysol/cardset-get-a-round
+%{_datadir}/pysol/cardset-ovale*
+
+%files cardsets-uncategorized
+%defattr(644,root,root,755)
+%{_datadir}/pysol/cardset-aisleriot
+%{_datadir}/pysol/cardset-colossus
+%{_datadir}/pysol/cardset-gpl
+%{_datadir}/pysol/cardset-jacoby
+%{_datadir}/pysol/cardset-naylor
+%{_datadir}/pysol/cardset-oxymoron*
+%{_datadir}/pysol/cardset-rangoon*
+%{_datadir}/pysol/cardset-spider
+%{_datadir}/pysol/cardset-tksol
+%{_datadir}/pysol/cardset-xpat2-*
 
 %files sounds
 %defattr(644,root,root,755)
