@@ -2,7 +2,7 @@ Summary:	PySol - a solitaire game collection
 Summary(pl):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.81
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://pysol2.sourceforge.net/download/%{name}-%{version}.tar.bz2
@@ -16,11 +16,10 @@ Source3:	http://pysol2.sourceforge.net/download/%{name}-%{version}-src.tar.bz2
 Source4:	%{name}.desktop
 Source5:	%{name}.png
 URL:		http://www.oberhumer.com/pysol/
-Requires:	tkinter
 Requires:	python
+Requires:	tkinter
 Conflicts:	pysol-sound-server < 3.00
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 - currently supports more than 200 distinct solitaire games,
@@ -204,14 +203,17 @@ rm -rf data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port \
 	data/cardset-hexadeck data/cardset-kintengu data/cardset-tuxedo \
 	data/cardset-vienna-2k
 rm -rf data/pysol_{15,16,20,21}.pyc
-for i in pysol-cardsets-4.40/data/* ; do mv $i data/ ; done
-for i in pysol-music-4.40/data/music/* ; do mv $i data/music/ ; done
-
-%build
+for i in pysol-cardsets-4.40/data/*; do
+	mv $i data/;
+done
+for i in pysol-music-4.40/data/music/*; do
+	mv $i data/music/;
+done
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Card,%{_bindir},%{_datadir},%{_mandir}/man6,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Card,%{_bindir},%{_datadir}} \
+	$RPM_BUILD_ROOT{%{_mandir}/man6,%{_pixmapsdir}}
 
 sed s\|@pkgdatadir@\|%{_datadir}/pysol\| pysol > $RPM_BUILD_ROOT%{_bindir}/pysol
 mv data $RPM_BUILD_ROOT%{_datadir}/pysol
