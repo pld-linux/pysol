@@ -2,7 +2,7 @@ Summary:	PySol - a solitaire game collection
 Summary(pl):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.80
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Games
 Group(de):	X11/Applikationen/Spiele
@@ -123,6 +123,7 @@ Muzyka dla pysol-a.
 rm -rf data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port \
 	data/cardset-hexadeck data/cardset-kintengu data/cardset-tuxedo \
 	data/cardset-vienna-2k
+rm -rf data/pysol_{15,16,20}.pyc
 for i in pysol-cardsets-4.40/data/* ; do mv $i data/ ; done
 for i in pysol-music-4.40/data/music/* ; do mv $i data/music/ ; done
 
