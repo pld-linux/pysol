@@ -1,8 +1,9 @@
 [Desktop Entry]
 Name=PySol
 Comment=A solitaire game collection
-Comment[pl]=Kolekcja pasjansów
+Comment[pl]=Kolekcja pasjansÃ³w
 Icon=pysol.png
 Exec=/usr/X11R6/bin/pysol
 Terminal=0
 Type=Application
+# vi: encoding=utf-8
