@@ -47,7 +47,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description -l pl
 - zawiera ponad 200 ró¿nych typów pasjansów,
 - oparty na rozbudowywalnym silniku,
-- mnówstwo klasycznych gier, takich jak Forty Thieves, FreeCell,
+- mnóstwo klasycznych gier, takich jak Forty Thieves, FreeCell,
   Klondike i Spider,
 - specjalne gry, jak Ganjifa, Hanafuda, Poker i Tarock,
 - ³adny wygl±d,
