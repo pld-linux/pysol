@@ -7,5 +7,5 @@ Exec=pysol
 Terminal=false
 Type=Application
 Encoding=UTF-8
-Categories=Application;Game;CardGame;
+Categories=Game;CardGame;
 # vi: encoding=utf-8
