@@ -10,20 +10,15 @@ Group(pl):	X11/Aplikacje/Gry
 Source0:	http://www.oberhumer.com/opensource/pysol/download/%{name}-%{version}.tar.bz2
 Source1:	http://www.oberhumer.com/opensource/pysol/download/%{name}-cardsets-4.40.tar.bz2
 Source2:	http://www.oberhumer.com/opensource/pysol/download/%{name}-music-4.40.tar.bz2
-Source3:	http://www.oberhumer.com/opensource/pysol/download/%{name}-sound-server-2.50.tar.bz2
 Source4:	%{name}.desktop
 Source5:	%{name}.png
 URL:		http://www.oberhumer.com/pysol
 Requires:	tkinter
 Requires:	python
-BuildRequires:	python-devel
-BuildRequires:	SDL-devel
-BuildRequires:	smpeg-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
-%define		_pythonplugindir	/usr/lib/python2.1/site-packages
 
 %description
 - currently supports more than 200 distinct solitaire games
@@ -81,24 +76,49 @@ Additional cardsets for pysol.
 %description -l pl cardsets
 Dodatkowe zestawy kart dla pysol-a.
 
+%package sounds
+Summary:	Sounds for pysol
+Summary(pl):	D¼wiêki dla pysol-a
+Group:	X11/Applications/Games
+Group(de):  X11/Applikationen/Spiele
+Group(pl):  X11/Aplikacje/Gry
+Requires: %{name}
+Requires: %{name}-sound-server 
+
+%description sounds
+Sounds for pysol.
+
+%description -l pl sounds
+D¼wiêki dla pysol-a.
+
+%package music
+Summary:  Background music for pysol
+Summary(pl):  Muzyka dla pysol-a
+Group:    X11/Applications/Games
+Group(de):  X11/Applikationen/Spiele
+Group(pl):  X11/Aplikacje/Gry
+Requires: %{name}
+Requires:	%{name}-sound-server
+
+%description music
+Background music for pysol.
+
+%description -l pl music
+Muzyka dla pysol-a.
+
 %prep
-%setup -q -a 1 -a 2 -a 3
+%setup -q -a 1 -a 2 
 rm -rf data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port data/cardset-hexadeck data/cardset-kintengu data/cardset-tuxedo data/cardset-vienna-2k
 for i in pysol-cardsets-4.40/data/* ; do mv $i data/ ; done
 for i in pysol-music-4.40/data/music/* ; do mv $i data/music/ ; done
 
 %build
-cd pysol-sound-server-2.50/src
-%configure
-%{__make}
-cd ../..
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_pythonplugindir},%{_applnkdir}/Games/Card,%{_bindir},%{_datadir},%{_mandir}/man6,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Card,%{_bindir},%{_datadir},%{_mandir}/man6,%{_pixmapsdir}}
 
-install pysol-sound-server-2.50/src/pysolsoundservermodule.so $RPM_BUILD_ROOT%{_pythonplugindir}
 sed s\|@pkgdatadir@\|%{_datadir}/pysol\| pysol > $RPM_BUILD_ROOT%{_bindir}/pysol
 mv data $RPM_BUILD_ROOT%{_datadir}/pysol
 
@@ -114,14 +134,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_pythonplugindir}/*
 %{_mandir}/man6/*
 %dir %{_datadir}/pysol
 %{_datadir}/pysol/html
 %{_datadir}/pysol/images
-%{_datadir}/pysol/music
 %{_datadir}/pysol/plugins
-%{_datadir}/pysol/sound
 %{_datadir}/pysol/tiles
 %{_datadir}/pysol/toolbar
 %{_datadir}/pysol/pysol*
@@ -134,3 +151,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/pysol/cardset-[12abcdfghjklmnoprtuvwx]*
 %{_datadir}/pysol/cardset-sp*
+
+%files sounds
+%defattr(644,root,root,755)
+%{_datadir}/pysol/sound
+
+%files music
+%defattr(644,root,root,755)
+%{_datadir}/pysol/music
