@@ -2,7 +2,7 @@ Summary:	PySol - a solitaire game collection
 Summary(pl):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.80
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Games
 Group(de):	X11/Applikationen/Spiele
@@ -123,7 +123,7 @@ Muzyka dla pysol-a.
 rm -rf data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port \
 	data/cardset-hexadeck data/cardset-kintengu data/cardset-tuxedo \
 	data/cardset-vienna-2k
-rm -rf data/pysol_{15,16,20}.pyc
+rm -rf data/pysol_{15,16,20,21}.pyc
 for i in pysol-cardsets-4.40/data/* ; do mv $i data/ ; done
 for i in pysol-music-4.40/data/music/* ; do mv $i data/music/ ; done
 
@@ -157,13 +157,23 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pysol/toolbar
 %{_datadir}/pysol/pysol*
 %{_datadir}/pysol/cardset-standard
+%{_datadir}/pysol/cardset-hard-a-port
+%{_datadir}/pysol/cardset-hexadeck
+%{_datadir}/pysol/cardset-kintengu
+%{_datadir}/pysol/cardset-vienna-2k
 %{_mandir}/man6/*
 %{_pixmapsdir}/*
 %{_applnkdir}/Games/Card/*
 
 %files cardsets
 %defattr(644,root,root,755)
-%{_datadir}/pysol/cardset-[12abcdfghjklmnoprtuvwx]*
+%{_datadir}/pysol/cardset-[12abcdfgjlmnoprtuwx]*
+%{_datadir}/pysol/cardset-ham*
+%{_datadir}/pysol/cardset-heg*
+%{_datadir}/pysol/cardset-h[ou]*
+%{_datadir}/pysol/cardset-kintengu-s*
+%{_datadir}/pysol/cardset-vienna-2k-s*
+%{_datadir}/pysol/cardset-vienna-t*
 %{_datadir}/pysol/cardset-sp*
 
 %files sounds
