@@ -2,12 +2,12 @@ Summary:	PySol - a solitaire game collection
 Summary(pl):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.82
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	31a3ed96c6feb54717c6bce9ddd82b24
-Source1:	%{name}-cardsets-4.40.tar.bz2
+Source1:	http://www.ertel.com.pl/~adam/%{name}-cardsets-4.40.tar.bz2
 # Source1-md5:	cdf3749865b2f3b9d60950a9fb87185a
 Source2:	%{name}-music-4.40.tar.bz2
 # Source2-md5:	08717045ef86825a1e59d5f66c3bf720
@@ -22,6 +22,8 @@ Requires:	pysol-sound-server >= 3.00
 Requires:	python >= 1:2.3
 %pyrequires_eq	python-tkinter
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		dotless_pyver	%(echo %{py_ver}|tr -d .)
 
 %description
 - currently supports more than 200 distinct solitaire games,
@@ -204,7 +206,7 @@ Muzyka dla pysola.
 rm -rf data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port \
 	data/cardset-hexadeck data/cardset-kintengu data/cardset-tuxedo \
 	data/cardset-vienna-2k data/cardset-oxymoron
-rm -f data/pysol_{15,16,20,21,22}.pyc
+rm -f data/pysol_*.pyc
 for i in pysol-cardsets-4.40/data/*; do
 	mv $i data/;
 done
@@ -229,7 +231,7 @@ install %{SOURCE5} $RPM_BUILD_ROOT%{_pixmapsdir}
 cp -R src/* $RPM_BUILD_ROOT%{py_sitedir}/pysol
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}/pysol
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}/pysol
-ln -sf %{py_sitedir}/pysol/pysol.pyc $RPM_BUILD_ROOT%{_datadir}/pysol/pysol_23.pyc
+ln -sf %{py_sitedir}/pysol/pysol.pyc $RPM_BUILD_ROOT%{_datadir}/pysol/pysol_%{dotless_pyver}.pyc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
