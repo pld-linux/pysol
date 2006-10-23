@@ -18,6 +18,7 @@ Source5:	%{name}.png
 Patch0:		%{name}-python23.patch
 URL:		http://www.pysol.org/
 BuildRequires:	python >= 1:2.3
+BuildRequires:	rpm-pythonprov
 Requires:	pysol-sound-server >= 3.00
 Requires:	python >= 1:2.3
 %pyrequires_eq	python-tkinter
