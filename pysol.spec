@@ -1,5 +1,5 @@
 Summary:	PySol - a solitaire game collection
-Summary(pl.UTF-8):   PySol - kolekcja pasjansów
+Summary(pl.UTF-8):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.82
 Release:	4
@@ -70,7 +70,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %package cardsets-classic_look
 Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):   Dodatkowe zestawy kart dla pysola
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
@@ -82,7 +82,7 @@ Dodatkowe zestawy kart (Klasyczny wygląd) dla pysola.
 
 %package cardsets-collectors-1-D
 Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):   Dodatkowe zestawy kart dla pysola
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
@@ -94,7 +94,7 @@ Dodatkowe zestawy kart (Kolekcjonerskie 1-D) dla pysola.
 
 %package cardsets-collectors-F-J
 Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):   Dodatkowe zestawy kart dla pysola
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
@@ -106,7 +106,7 @@ Dodatkowe zestawy kart (Kolekcjonerskie F-J) dla pysola.
 
 %package cardsets-collectors-L-N
 Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):   Dodatkowe zestawy kart dla pysola
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -118,7 +118,7 @@ Dodatkowe zestawy kart (Kolekcjonerskie L-N) dla pysola.
 
 %package cardsets-collectors-P-W
 Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):   Dodatkowe zestawy kart dla pysola
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -130,7 +130,7 @@ Dodatkowe zestawy kart (Kolekcjonerskie P-W) dla pysola.
 
 %package cardsets-fantasy
 Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):   Dodatkowe zestawy kart dla pysola
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -142,7 +142,7 @@ Dodatkowe zestawy kart (Fantastyczne) dla pysola.
 
 %package cardsets-os
 Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):   Dodatkowe zestawy kart dla pysola
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -154,7 +154,7 @@ Dodatkowe zestawy kart (Systemy operacyjne) dla pysola.
 
 %package cardsets-round
 Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):   Dodatkowe zestawy kart dla pysola
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -166,7 +166,7 @@ Dodatkowe zestawy kart (Krągłe karty) dla pysola.
 
 %package cardsets-uncategorized
 Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):   Dodatkowe zestawy kart dla pysola
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
@@ -178,7 +178,7 @@ Dodatkowe zestawy kart (Nieskatalogowane) dla pysola.
 
 %package sounds
 Summary:	Sounds for pysol
-Summary(pl.UTF-8):   Dźwięki dla pysola
+Summary(pl.UTF-8):	Dźwięki dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 Requires:	%{name}-sound-server >= 3.00
@@ -191,7 +191,7 @@ Dźwięki dla pysola.
 
 %package music
 Summary:	Background music for pysol
-Summary(pl.UTF-8):   Muzyka dla pysola
+Summary(pl.UTF-8):	Muzyka dla pysola
 Group:		X11/Applications/Games
 Requires:	%{name}
 Requires:	%{name}-sound-server >= 3.00
