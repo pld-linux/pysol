@@ -2,10 +2,9 @@
 Name=PySol
 Comment=A solitaire game collection
 Comment[pl]=Kolekcja pasjansów
-Icon=pysol.png
+Icon=pysol
 Exec=pysol
 Terminal=false
 Type=Application
-Encoding=UTF-8
 Categories=Game;CardGame;
 # vi: encoding=utf-8
