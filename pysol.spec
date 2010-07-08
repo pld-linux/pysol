@@ -2,7 +2,7 @@ Summary:	PySol - a solitaire game collection
 Summary(pl.UTF-8):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.82
-Release:	6
+Release:	7
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	%{name}-%{version}.tar.bz2
