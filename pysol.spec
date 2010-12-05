@@ -3,14 +3,15 @@ Summary(pl.UTF-8):	PySol - kolekcja pasjansów
 Name:		pysol
 Version:	4.82
 Release:	7
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	31a3ed96c6feb54717c6bce9ddd82b24
-Source1:	http://www.ertel.com.pl/~adam/%{name}-cardsets-4.40.tar.bz2
+Source1:	%{name}-cardsets-4.40.tar.bz2
 # Source1-md5:	cdf3749865b2f3b9d60950a9fb87185a
 Source2:	%{name}-music-4.40.tar.bz2
 # Source2-md5:	08717045ef86825a1e59d5f66c3bf720
+#Source3Download: http://www.pysol.org/
 Source3:	http://www.pysol.org/download/pysol/%{name}-%{version}-src.tar.bz2
 # Source3-md5:	be0fd45c016fe2dcacb03fb29871aff4
 Source4:	%{name}.desktop
@@ -18,6 +19,7 @@ Source5:	%{name}.png
 Patch0:		%{name}-python23.patch
 URL:		http://www.pysol.org/
 BuildRequires:	python >= 1:2.3
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	rpm-pythonprov
 Requires:	pysol-sound-server >= 3.00
 Requires:	python >= 1:2.3
@@ -69,145 +71,146 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 - napisane w 100%% w Pythonie.
 
 %package cardsets-classic_look
-Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
+Summary:	Additional cardsets for PySol
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description cardsets-classic_look
-Additional cardsets (Classic look) for pysol.
+Additional cardsets (Classic look) for PySol.
 
 %description cardsets-classic_look -l pl.UTF-8
-Dodatkowe zestawy kart (Klasyczny wygląd) dla pysola.
+Dodatkowe zestawy kart (Klasyczny wygląd) dla PySola.
 
 %package cardsets-collectors-1-D
-Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
+Summary:	Additional cardsets for PySol
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description cardsets-collectors-1-D
-Additional cardsets (Collectors 1-D) for pysol.
+Additional cardsets (Collectors 1-D) for PySol.
 
 %description cardsets-collectors-1-D -l pl.UTF-8
-Dodatkowe zestawy kart (Kolekcjonerskie 1-D) dla pysola.
+Dodatkowe zestawy kart (Kolekcjonerskie 1-D) dla PySola.
 
 %package cardsets-collectors-F-J
-Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
+Summary:	Additional cardsets for PySol
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description cardsets-collectors-F-J
-Additional cardsets (Collectors F-J) for pysol.
+Additional cardsets (Collectors F-J) for PySol.
 
 %description cardsets-collectors-F-J -l pl.UTF-8
-Dodatkowe zestawy kart (Kolekcjonerskie F-J) dla pysola.
+Dodatkowe zestawy kart (Kolekcjonerskie F-J) dla PySola.
 
 %package cardsets-collectors-L-N
-Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
+Summary:	Additional cardsets for PySol
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
 %description cardsets-collectors-L-N
-Additional cardsets (Collectors L-N) for pysol.
+Additional cardsets (Collectors L-N) for PySol.
 
 %description cardsets-collectors-L-N -l pl.UTF-8
-Dodatkowe zestawy kart (Kolekcjonerskie L-N) dla pysola.
+Dodatkowe zestawy kart (Kolekcjonerskie L-N) dla PySola.
 
 %package cardsets-collectors-P-W
-Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
+Summary:	Additional cardsets for PySol
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
 %description cardsets-collectors-P-W
-Additional cardsets (Collectors P-W) for pysol.
+Additional cardsets (Collectors P-W) for PySol.
 
 %description cardsets-collectors-P-W -l pl.UTF-8
-Dodatkowe zestawy kart (Kolekcjonerskie P-W) dla pysola.
+Dodatkowe zestawy kart (Kolekcjonerskie P-W) dla PySola.
 
 %package cardsets-fantasy
-Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
+Summary:	Additional cardsets for PySol
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
 %description cardsets-fantasy
-Additional cardsets (Fantasy) for pysol.
+Additional cardsets (Fantasy) for PySol.
 
 %description cardsets-fantasy -l pl.UTF-8
-Dodatkowe zestawy kart (Fantastyczne) dla pysola.
+Dodatkowe zestawy kart (Fantastyczne) dla PySola.
 
 %package cardsets-os
-Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
+Summary:	Additional cardsets for PySol
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
 %description cardsets-os
-Additional cardsets (Operating Systems) for pysol.
+Additional cardsets (Operating Systems) for PySol.
 
 %description cardsets-os -l pl.UTF-8
-Dodatkowe zestawy kart (Systemy operacyjne) dla pysola.
+Dodatkowe zestawy kart (Systemy operacyjne) dla PySola.
 
 %package cardsets-round
-Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
+Summary:	Additional cardsets for PySol
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
 %description cardsets-round
-Additional cardsets (Round cardsets) for pysol.
+Additional cardsets (Round cardsets) for PySol.
 
 %description cardsets-round -l pl.UTF-8
-Dodatkowe zestawy kart (Krągłe karty) dla pysola.
+Dodatkowe zestawy kart (Krągłe karty) dla PySola.
 
 %package cardsets-uncategorized
-Summary:	Additional cardsets for pysol
-Summary(pl.UTF-8):	Dodatkowe zestawy kart dla pysola
+Summary:	Additional cardsets for PySol
+Summary(pl.UTF-8):	Dodatkowe zestawy kart dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name}
 
 %description cardsets-uncategorized
-Additional cardsets (Uncategorized) for pysol.
+Additional cardsets (Uncategorized) for PySol.
 
 %description cardsets-uncategorized -l pl.UTF-8
-Dodatkowe zestawy kart (Nieskatalogowane) dla pysola.
+Dodatkowe zestawy kart (Nieskatalogowane) dla PySola.
 
 %package sounds
-Summary:	Sounds for pysol
-Summary(pl.UTF-8):	Dźwięki dla pysola
+Summary:	Sounds for PySol
+Summary(pl.UTF-8):	Dźwięki dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name}
 Requires:	%{name}-sound-server >= 3.00
 
 %description sounds
-Sounds for pysol.
+Sounds for PySol.
 
 %description sounds -l pl.UTF-8
-Dźwięki dla pysola.
+Dźwięki dla PySola.
 
 %package music
-Summary:	Background music for pysol
-Summary(pl.UTF-8):	Muzyka dla pysola
+Summary:	Background music for PySol
+Summary(pl.UTF-8):	Muzyka dla PySola
 Group:		X11/Applications/Games
 Requires:	%{name}
 Requires:	%{name}-sound-server >= 3.00
 
 %description music
-Background music for pysol.
+Background music for PySol.
 
 %description music -l pl.UTF-8
-Muzyka dla pysola.
+Muzyka dla PySola.
 
 %prep
 %setup -q -a 1 -a 2 -a 3
-rm -rf data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port \
+
+%{__rm} -r data/cardset-2000 data/cardset-colossus data/cardset-hard-a-port \
 	data/cardset-hexadeck data/cardset-kintengu data/cardset-tuxedo \
 	data/cardset-vienna-2k data/cardset-oxymoron
-rm -f data/pysol_*.pyc
+%{__rm} data/pysol_*.pyc
 for i in pysol-cardsets-4.40/data/*; do
 	mv $i data/;
 done
@@ -223,16 +226,17 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_bindir},%{_datadir}} \
 	$RPM_BUILD_ROOT{%{_mandir}/man6,%{_pixmapsdir},%{py_sitedir}/pysol}
 
 sed s\|@pkgdatadir@\|%{_datadir}/pysol\| pysol > $RPM_BUILD_ROOT%{_bindir}/pysol
-mv data $RPM_BUILD_ROOT%{_datadir}/pysol
+cp -a data $RPM_BUILD_ROOT%{_datadir}/pysol
 
 install pysol.6 $RPM_BUILD_ROOT%{_mandir}/man6/pysol.6
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE5} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 cp -R src/* $RPM_BUILD_ROOT%{py_sitedir}/pysol
+ln -sf %{py_sitedir}/pysol/pysol.pyc $RPM_BUILD_ROOT%{_datadir}/pysol/pysol_%{dotless_pyver}.pyc
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}/pysol
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}/pysol
-ln -sf %{py_sitedir}/pysol/pysol.pyc $RPM_BUILD_ROOT%{_datadir}/pysol/pysol_%{dotless_pyver}.pyc
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -240,7 +244,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/pysol
 %dir %{py_sitedir}/pysol
 %{py_sitedir}/pysol/*.py[co]
 %dir %{py_sitedir}/pysol/games
@@ -262,9 +266,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pysol/cardset-hexadeck
 %{_datadir}/pysol/cardset-kintengu*
 %{_datadir}/pysol/cardset-vienna-2k
-%{_mandir}/man6/*
-%{_pixmapsdir}/*
-%{_desktopdir}/*.desktop
+%{_mandir}/man6/pysol.6*
+%{_pixmapsdir}/pysol.png
+%{_desktopdir}/pysol.desktop
 
 %files cardsets-classic_look
 %defattr(644,root,root,755)
